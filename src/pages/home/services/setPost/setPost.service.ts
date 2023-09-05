@@ -7,11 +7,12 @@ export const setPost = async (post: ModelPublic, user: ModelUser) => {
   const newPost: ModelPost = {
     description: post.description,
     emailUser: post.emailUser,
-    favorite: post.favorite,
     img: post.img,
     imgUser: post.imgUser,
     iudUser: post.iudUser,
-    nameUser: post.nameUser
+    nameUser: post.nameUser,
+    favoritesCollection: post.favoritesCollection
+
   }
 
   const { email, name, photo } = user;

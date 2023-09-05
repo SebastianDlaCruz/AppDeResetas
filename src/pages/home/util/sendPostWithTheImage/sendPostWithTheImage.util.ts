@@ -6,6 +6,5 @@ export const sendPostWithTheImage = async (postRef: RefObject<HTMLTextAreaElemen
     const response = await createPost(newPost);
     return response.idPost;
   }
-
   return '';
 }

@@ -1,8 +1,9 @@
 import { StarIcon } from "@chakra-ui/icons";
 import { Button } from "@chakra-ui/react";
-import { ModelPost } from "@pages/home/models/post.model";
+import { useUserContext } from "@context/index";
+import useGetData from "@hook/useGetData/useGetData";
+import { ModelFavorite, ModelPost } from "@pages/home/models/post.model";
 import { setFavorite } from "@pages/home/services/setFavorite/setFavorite";
-
 
 interface Props {
   id: string;
@@ -10,18 +11,26 @@ interface Props {
   post: ModelPost;
 }
 
-export const ButtonStart = ({ favorite, id, post }: Props) => {
+export const ButtonStart = ({ id, post, favorite }: Props) => {
 
+  const { documentInfo } = useGetData<ModelFavorite>({ nameDoc: "Favoritos" });
+  const { user } = useUserContext();
   const handleFavorite = (id: string, post: ModelPost) => {
-    const getFavorite = !favorite;
-    setFavorite(id, getFavorite, post)
+    console.log(post.favoritesCollection.length === 0 || post.favoritesCollection.some(item => item.idUser !== user.uid));
+    if (post.favoritesCollection.length === 0
+      || post.favoritesCollection.some(item => item.idUser !== user.uid)) {
+      post.favoritesCollection.push({ idUser: user.uid, favorite: true });
+      setFavorite(id, post);
+    }
+
   }
+
   return (
     <Button as={StarIcon} position={"absolute"} insetBlockStart={"0%"}
       insetInlineEnd={"2%"} onClick={() => handleFavorite(id, post)}
       _hover={{
         bg: 'none',
-        color: 'yellow.500'
+        color: (favorite) ? 'black' : 'yellow.500'
       }} bg={"none"}
       color={favorite ? 'yellow.500' : ''} boxSize={"49px"} />
   )

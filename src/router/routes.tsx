@@ -1,4 +1,5 @@
 import { Home, Login, Register } from "@pages/index";
+import Favorites from "@pages/view/favorites/Favorites";
 import Profile from "@pages/view/profile/Profile";
 import {
   createBrowserRouter,
@@ -11,6 +12,9 @@ export const router = createBrowserRouter([
       {
         path: '/perfil',
         element: <Profile />
+      }, {
+        path: '/favoritos',
+        element: <Favorites />
       }
     ]
 

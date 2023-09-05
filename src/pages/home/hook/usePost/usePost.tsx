@@ -8,7 +8,8 @@ import { Dispatch, RefObject, SetStateAction, useRef } from "react";
 
 
 const usePost = (imgRef: RefObject<HTMLInputElement>,
-  setImage: Dispatch<SetStateAction<string>>, setStateImage: Dispatch<SetStateAction<statusImage>>) => {
+  setImage: Dispatch<SetStateAction<string>>,
+  setStateImage: Dispatch<SetStateAction<statusImage>>) => {
 
   const { user } = useUserContext();
   const postRef = useRef<HTMLTextAreaElement>(null);
@@ -23,24 +24,26 @@ const usePost = (imgRef: RefObject<HTMLInputElement>,
     newPost["emailUser"] = user.email;
 
     if (postRef.current !== null) {
-
       if (imgRef.current !== null &&
         imgRef.current.files?.length !== undefined &&
         imgRef.current.files?.length > 0 && postRef.current) {
-        setImagePost(imgRef.current, 'Publicaciones/').then((response) => {
-          if (response.ok === responseImg.SUCCESS &&
-            response.imgUrl && postRef.current &&
-            imgRef.current) {
-            newPost["img"] = response.imgUrl;
-            newPost["description"] = postRef.current.value;
-            sendPostWithTheImage(postRef, newPost);
-            setImage("");
-            imgRef.current.value = '';
-            setStateImage(statusImage.NULL);
-            postRef.current.value = '';
-          }
-        });
+        setImagePost(imgRef.current, 'Publicaciones/')
+          .then((response) => {
+            if (response.ok === responseImg.SUCCESS &&
+              response.imgUrl && postRef.current &&
+              imgRef.current) {
+              newPost["img"] = response.imgUrl;
+              newPost["description"] = postRef.current.value;
+              sendPostWithTheImage(postRef, newPost);
+              setImage("");
+              imgRef.current.value = '';
+              setStateImage(statusImage.NULL);
+              postRef.current.value = '';
+            }
+          });
+
       } else if (postRef.current.value.trim()) {
+        console.log(newPost)
         newPost["description"] = postRef.current.value;
         newPost["img"] = '';
         createPost(newPost);

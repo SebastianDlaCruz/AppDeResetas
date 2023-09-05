@@ -12,7 +12,6 @@ export const createPost = async (post: ModelPost): Promise<Props> => {
   try {
     const response = await addDoc(collection(FirebaseDB, 'Publicaciones'), post);
     if (!response) throw new Error('Error al crear un publicación');
-    response.id
     return {
       ok: true,
       idPost: response.id

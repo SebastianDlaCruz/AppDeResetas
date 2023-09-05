@@ -6,6 +6,6 @@ export const newPost: ModelPost = {
   nameUser: '',
   emailUser: '',
   description: '',
-  favorite: false,
-  img: ''
+  favoritesCollection: [],
+  img: '',
 }
