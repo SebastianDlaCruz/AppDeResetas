@@ -1,8 +1,7 @@
 import { StarIcon } from "@chakra-ui/icons";
 import { Button } from "@chakra-ui/react";
 import { useUserContext } from "@context/index";
-import useGetData from "@hook/useGetData/useGetData";
-import { ModelFavorite, ModelPost } from "@pages/home/models/post.model";
+import { ModelPost } from "@pages/home/models/post.model";
 import { setFavorite } from "@pages/home/services/setFavorite/setFavorite";
 
 interface Props {
@@ -13,14 +12,19 @@ interface Props {
 
 export const ButtonStart = ({ id, post, favorite }: Props) => {
 
-  const { documentInfo } = useGetData<ModelFavorite>({ nameDoc: "Favoritos" });
   const { user } = useUserContext();
   const handleFavorite = (id: string, post: ModelPost) => {
-    console.log(post.favoritesCollection.length === 0 || post.favoritesCollection.some(item => item.idUser !== user.uid));
     if (post.favoritesCollection.length === 0
-      || post.favoritesCollection.some(item => item.idUser !== user.uid)) {
+      || !post.favoritesCollection.some(item => item.idUser === user.uid)) {
       post.favoritesCollection.push({ idUser: user.uid, favorite: true });
       setFavorite(id, post);
+    } else if (post.favoritesCollection.some(item => item.idUser === user.uid)) {
+      const newFavorite = post.favoritesCollection.find(item => item.idUser === user.uid);
+      if (newFavorite) {
+        newFavorite.favorite = !newFavorite.favorite
+
+        setFavorite(id, post);
+      }
     }
 
   }

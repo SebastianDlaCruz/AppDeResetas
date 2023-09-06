@@ -4,8 +4,9 @@ import { addDoc, collection, doc, setDoc } from "firebase/firestore";
 /** Eliminar */
 export const setFavorite = async (id: string, post: ModelPost) => {
   await setDoc(doc(FirebaseDB, 'Publicaciones', id), { ...post })
-
 }
+
+
 
 export const setDocFavorite = async (favorite: ModelFavorite) => {
   try {
