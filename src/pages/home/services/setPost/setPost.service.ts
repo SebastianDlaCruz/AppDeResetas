@@ -11,6 +11,11 @@ export const setPost = async (post: ModelPublic, user: ModelUser) => {
     imgUser: post.imgUser,
     iudUser: post.iudUser,
     nameUser: post.nameUser,
+    foodType: post.foodType,
+    seasonType: post.seasonType,
+    title: post.title,
+    date: post.date,
+    time: post.time,
     favoritesCollection: post.favoritesCollection
 
   }

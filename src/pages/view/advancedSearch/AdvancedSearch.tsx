@@ -1,30 +1,27 @@
-import { Box, Heading, Image, Text } from "@chakra-ui/react";
-import useGetData from "@hook/useGetData/useGetData";
-import { ModelPost } from "@pages/home/models/post.model";
-/* import Publication from "../Publication/Publication"; */
+import { Box, Checkbox, FormControl, Heading, Image, Text } from "@chakra-ui/react";
 import Publication from "@components/Publications/Publications";
+import { Search, SelectCustom } from "@components/index";
 import { useUserContext } from "@context/index";
-import { getFavorite } from "@pages/home/adapters/getFavorite.adapter";
-import useSetDataPost from "@pages/home/hook/useSetDataPost/useSetDataPost";
-import { ButtonStart } from "../ButtonStart/ButtonStart";
-import ContainerImgProfile from "../ContainerImgProfile/ContainerImgProfile";
-import ContainerComment from "../ContinerComment/ContainerComment";
-import FormComment from "../FormComment/FormComment";
+import { ButtonStart, ContainerComment, ContainerImgProfile, FormComment, getFavorite } from "@pages/home";
+import { FoodType, SeasonType } from "@pages/home/util/CategoryTypes/CategoryTypes.util";
+import useSearch from "./hook/useSearch/useSearch";
+const AdvancedSearch = () => {
 
-export interface ModelPublic extends ModelPost {
-  id: string;
-}
-/**Borrar */
-const Publications = () => {
+  const { handleFood, handleSearch, handleSeason,
+    search, handleSubmit, result, isLoading, isSuccess } = useSearch();
   const { user } = useUserContext();
-  const { documentInfo, isLoading, isSuccess } = useGetData<ModelPublic>({ nameDoc: "Publicaciones" });
-  useSetDataPost(documentInfo, user);
   return (
-    <Box as="section" marginBlockStart={"22px"} display={"flex"} flexDirection={"column"} alignItems={"center"} gap="34px">
-      {/* <Publication data={documentInfo} isSuccess={isSuccess} isLoading={isLoading} /> */}
-      <Publication dataLength={documentInfo.length} isLoading={isLoading} isSuccess={isSuccess} textError="Sin publicaciones😓">
+    <>
+      <FormControl as={"form"} onSubmit={handleSubmit} position={"relative"} w={"400px"}>
+        <Search value={search} onChange={handleSearch} w="400px" />
+        <SelectCustom placeholder="Por tipo de comida " data={FoodType} onChange={handleFood} />
+        <SelectCustom placeholder="Por tipo de estación " data={SeasonType} onChange={handleSeason} />
+        <Checkbox />
+      </FormControl>
+
+      <Publication dataLength={result.length} isLoading={isLoading} isSuccess={isSuccess} textError="Sin resultados😓">
         {
-          documentInfo.map((item, index) => (
+          result.map((item, index) => (
             <Box as="article" key={index} position={"relative"} w={"769px"} minH="100%" bgColor={"gray.300"} padding={"12px"} borderRadius={"3px"}>
               <ButtonStart favorite={getFavorite(item.favoritesCollection, user.uid)} id={item.id} post={item} />
               <ContainerImgProfile as={"header"} imgUser={item.imgUser} alt={item.nameUser}
@@ -51,8 +48,8 @@ const Publications = () => {
             </Box>))
         }
       </Publication>
-    </Box >
+    </>
   )
 }
 
-export default Publications
+export default AdvancedSearch

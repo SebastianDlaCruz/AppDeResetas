@@ -5,10 +5,10 @@ interface Props {
   nameUser: string;
   emailUser: string;
   as: As;
-
+  date: string
 }
 
-const ContainerImgProfile = ({ imgUser, alt, emailUser, nameUser, as }: Props) => {
+const ContainerImgProfile = ({ imgUser, alt, emailUser, nameUser, as, date }: Props) => {
 
   return (
     <Box as={as} display={"flex"} alignItems={"center"} gap="10px">
@@ -19,6 +19,7 @@ const ContainerImgProfile = ({ imgUser, alt, emailUser, nameUser, as }: Props) =
       <Box>
         <Heading as="h3">{nameUser}</Heading>
         <Text fontSize={"14px"}>{emailUser}</Text>
+        <Text fontSize={"14px"}>Fecha de publicación: {date}</Text>
       </Box>
     </Box>
   )

@@ -1,6 +1,7 @@
 import { Button, FormControl, FormLabel, Input } from "@chakra-ui/react";
 import { useUserContext } from "@context/index";
 import { createComment } from "@pages/home/services/createComment/createComment";
+import { getCurrentDate, getTime } from "@pages/home/util/Date/date.util";
 import { newComment } from "@pages/home/util/newComment/newComment.util";
 import { ChangeEvent, FormEvent, useState } from "react";
 interface Props {
@@ -21,8 +22,11 @@ const FormComment = ({ idPost }: Props) => {
       newComment["imgUser"] = user.photo || '';
       newComment["nameUser"] = user.name;
       newComment["idPost"] = idPost;
+      newComment["date"] = getCurrentDate();
+      newComment["time"] = getTime();
       createComment(newComment);
       setComment("");
+
     }
 
   }

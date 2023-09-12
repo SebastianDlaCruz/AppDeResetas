@@ -17,7 +17,7 @@ const Publication = ({ isSuccess, children, isLoading, dataLength, textError, da
       <SkeletonText mt='4' height={"40px"} noOfLines={4} spacing='4' skeletonHeight='2' />
     </Box>
   );
-  console.log(dataLengthFavorite);
+
   if (dataLength === 0 || dataLengthFavorite === 0) {
     return (
       <Text fontSize={"40px"} fontWeight={"bold"} color="orange.800">{textError}</Text>

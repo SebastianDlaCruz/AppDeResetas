@@ -4,8 +4,13 @@ export const newPost: ModelPost = {
   iudUser: '',
   imgUser: '',
   nameUser: '',
+  title: '',
+  foodType: '',
+  seasonType: '',
   emailUser: '',
   description: '',
   favoritesCollection: [],
   img: '',
+  date: '',
+  time: ''
 }

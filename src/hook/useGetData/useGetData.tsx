@@ -15,6 +15,7 @@ const useGetData = <T,>({ nameDoc }: Props) => {
     const unsubscribe = onSnapshot(collection(FirebaseDB, nameDoc), (doc) => {
       try {
         const data: T[] = [];
+
         doc.forEach(doc => {
           const documentData = doc.data() as T;
           const id = doc.id;

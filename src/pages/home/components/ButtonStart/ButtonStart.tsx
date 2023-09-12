@@ -22,7 +22,6 @@ export const ButtonStart = ({ id, post, favorite }: Props) => {
       const newFavorite = post.favoritesCollection.find(item => item.idUser === user.uid);
       if (newFavorite) {
         newFavorite.favorite = !newFavorite.favorite
-
         setFavorite(id, post);
       }
     }

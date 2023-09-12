@@ -8,8 +8,12 @@ export interface ModelPost {
   nameUser: string;
   imgUser: string;
   emailUser: string;
-  favorite: boolean;
+  title: string;
+  seasonType: string;
+  foodType: string;
   img: string;
   description: string;
   favoritesCollection: ModelFavorite[];
-}
+  date: string;
+  time: string;
+}   

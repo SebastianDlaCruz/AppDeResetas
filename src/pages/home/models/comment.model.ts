@@ -4,7 +4,9 @@ export interface ModelComment {
   nameUser: string;
   imgUser: string;
   emailUser: string;
-  idUser: string
+  idUser: string;
+  date: string;
+  time: string;
 }
 
 

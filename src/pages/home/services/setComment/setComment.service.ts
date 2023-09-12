@@ -12,7 +12,9 @@ export const setComment = async (comment: ModelCommentInfo, user: ModelUser) => 
     idPost: comment.idPost,
     idUser: comment.idUser,
     imgUser: comment.imgUser,
-    nameUser: comment.nameUser
+    nameUser: comment.nameUser,
+    date: comment.date,
+    time: comment.time
   };
   await setDoc(doc(FirebaseDB, 'Comentarios', comment.id), { ...newComment, emailUser: email, nameUser: name, imgUser: photo })
 

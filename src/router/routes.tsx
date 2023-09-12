@@ -1,4 +1,5 @@
 import { Home, Login, Register } from "@pages/index";
+import AdvancedSearch from "@pages/view/advancedSearch/AdvancedSearch";
 import Favorites from "@pages/view/favorites/Favorites";
 import Profile from "@pages/view/profile/Profile";
 import {
@@ -15,6 +16,9 @@ export const router = createBrowserRouter([
       }, {
         path: '/favoritos',
         element: <Favorites />
+      }, {
+        path: '/busqueda_avanzada',
+        element: <AdvancedSearch />
       }
     ]
 

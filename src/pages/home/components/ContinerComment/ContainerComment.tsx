@@ -23,8 +23,8 @@ const ContainerComment = ({ idPost }: Props) => {
               return (
                 <Box key={key} bgColor={"gray.200"} padding={"14px"}>
                   <ContainerImgProfile as={"div"} emailUser={item.emailUser}
-                    nameUser={item.nameUser} imgUser={item.imgUser} alt={item.nameUser} />
-                  <Text color={"blackAlpha.900"} fontSize={"1rem"}>{item.comment} </Text>
+                    nameUser={item.nameUser} imgUser={item.imgUser} alt={item.nameUser} date={item.date} />
+                  <Text color={"blackAlpha.900"} fontSize={"1rem"}>{item.comment}</Text>
                 </Box>)
             }
 

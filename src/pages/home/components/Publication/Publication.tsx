@@ -41,13 +41,14 @@ const Publication = ({ isSuccess, data, isLoading }: Props) => {
           <Box as="article" key={index} position={"relative"} w={"769px"} minH="100%" bgColor={"gray.300"} padding={"12px"} borderRadius={"3px"}>
             <ButtonStart favorite={getFavorite(item.favoritesCollection, user.uid)} id={item.id} post={item} />
             <ContainerImgProfile as={"header"} imgUser={item.imgUser} alt={item.nameUser}
-              emailUser={item.emailUser} nameUser={item.nameUser} />
+              emailUser={item.emailUser} nameUser={item.nameUser} date={item.date} />
+
             <Box display={"flex"} justifyContent={"center"} alignItems={"center"} flexDirection={"column"} gap="32px" marginBlockStart={"14px"}>
               {item.img.trim() &&
                 <Box w={"89%"} h="400px">
                   <Image src={item.img || '/assets/user.svg'} alt={item.description} w={"100%"} h="inherit" objectFit={"cover"} /></Box>}
               <Text>{item.description}</Text>
-            </Box>
+              T</Box>
 
             <Box>
               <Text>Comentarios</Text>
