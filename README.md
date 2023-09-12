@@ -17,12 +17,6 @@ Características posibles:
 
     Búsqueda Avanzada: Implementa una búsqueda avanzada que permita a los usuarios buscar recetas con filtros específicos, como tiempo de preparación, nivel de dificultad, etc.
 
-    Diseño Responsivo:  Asegúrate de que la aplicación se vea y funcione correctamente en diferentes dispositivos.
-    
-    (Funcionalidades extras):
-
-    -Notificaciones:  Implementa notificaciones para informar a los usuarios sobre nuevos comentarios en sus recetas o interacciones con sus perfiles.
-
 
 Prueba Propuesta: Prueba de Publicación y Exploración de Recetas
 Descripción: En esta prueba, te centrarás en asegurarte de que los usuarios puedan publicar sus recetas y que otros usuarios puedan explorar y visualizar las recetas publicadas.
@@ -39,14 +33,4 @@ Esta prueba te ayudará a asegurarte de que los usuarios puedan crear y publicar
 
 
 
-- Publicación :
-  idPublicación:string
-  idUser: string,
-  publicación:string,
-  imgPublicacion:string;
-
-
-- Comentarios: 
-  idComentario:string,
-  idPublicación:string
 

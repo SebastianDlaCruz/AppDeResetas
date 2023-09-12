@@ -9,7 +9,7 @@ interface Props {
 
 const SelectCustom = ({ data, placeholder, onChange }: Props) => {
   return (
-    <Select placeholder={placeholder} bgColor={"orange.800"} w={"490px"} required onChange={onChange}>
+    <Select placeholder={placeholder} bgColor={"orange.800"} w={"490px"} color="white" required onChange={onChange}>
       {data.map((item, index) => <Box as="option" key={index} color={"orange.800"} value={item}>{item}</Box>)}
     </Select>
   )

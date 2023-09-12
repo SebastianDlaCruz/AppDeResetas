@@ -57,7 +57,6 @@ const usePost = (imgRef: RefObject<HTMLInputElement>,
           });
 
       } else if (postRef.current.value.trim()) {
-        console.log(newPost)
         newPost["description"] = postRef.current.value;
         newPost["img"] = '';
         createPost(newPost);

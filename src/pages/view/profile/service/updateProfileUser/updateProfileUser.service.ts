@@ -32,20 +32,16 @@ export const updateProfileImg = async (img: string | null) => {
 
 
 export const updateProfileUser = async (name: string, photo: string | undefined, email: string) => {
-
   try {
-    const auth = FirebaseAuth.currentUser
 
-    if (auth) {
-      await updateProfile(auth, { displayName: name, photoURL: photo });
-      const res = await updateEmail(auth, email);
+    if (FirebaseAuth.currentUser) {
+      await updateProfile(FirebaseAuth.currentUser, { displayName: name, photoURL: photo });
+      const res = await updateEmail(FirebaseAuth.currentUser, email);
       console.log(res);
       return {
         ok: true
       }
-
     }
-
   } catch (error) {
     console.log(error);
     return {

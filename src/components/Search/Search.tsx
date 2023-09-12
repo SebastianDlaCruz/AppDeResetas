@@ -11,9 +11,10 @@ interface Props {
 const Search = ({ value, onChange, w }: Props) => {
   return (
     <Box display={"flex"} justifyContent={"center"} w={w}>
-      <Input type="text" placeholder="Buscar" borderColor={"blackAlpha.700"} onChange={onChange} value={value} />
+      <Input type="text" position={"relative"} placeholder="Buscar" borderColor={"blackAlpha.700"}
+        onChange={onChange} value={value} _placeholder={{ color: "white" }} />
       <Button type="submit" position={"absolute"}
-        insetInlineEnd={"1px"} insetBlock={"-3%"} maxH={"100%"}
+        insetInlineEnd={"1px"} insetBlock={"-3%"} insetInline={"61%"} maxH={"100%"}
         background={'none'} _hover={{ background: 'none' }} boxSize={"50px"} zIndex={'1'}>
         <Icon as={Search2Icon} />
       </Button>
