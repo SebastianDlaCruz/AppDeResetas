@@ -1,3 +1,4 @@
+import { ModelFavorite } from "@pages/home";
 import { ModelPost } from "@pages/home/models/post.model";
 import { FirebaseDB } from "@utilities/index";
 import { addDoc, collection, doc, setDoc } from "firebase/firestore";

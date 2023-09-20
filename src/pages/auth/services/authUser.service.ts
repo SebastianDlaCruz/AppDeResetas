@@ -57,7 +57,6 @@ export const singUser = async (email: string, password: string): Promise<Respons
 
   } catch (error) {
     console.error(error);
-
     return {
       status: false,
       message: 'no se puedo iniciar session. Asegúrese que estar registrado o ingrese bien las credenciales'

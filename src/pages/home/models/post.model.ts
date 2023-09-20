@@ -16,4 +16,8 @@ export interface ModelPost {
   favoritesCollection: ModelFavorite[];
   date: string;
   time: string;
-}   
+}
+
+export interface ModelPublic extends ModelPost {
+  id: string;
+}

@@ -4,6 +4,7 @@ import { Header, LoadingPages } from "@components/index";
 import { useAuth } from "@pages/auth";
 import { Outlet, useLocation } from "react-router-dom";
 import { Post, Publications } from ".";
+
 const Home = () => {
 
   const { isLoading } = useAuth();

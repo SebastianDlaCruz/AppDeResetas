@@ -1,6 +1,5 @@
 import { ModelUser } from "@context/index";
-import { ModelPublic } from "@pages/home/components/Publications/Publications";
-import { ModelPost } from "@pages/home/models/post.model";
+import { ModelPost, ModelPublic } from "@pages/home/models/post.model";
 import { FirebaseDB } from "@utilities/index";
 import { doc, setDoc } from "firebase/firestore";
 export const setPost = async (post: ModelPublic, user: ModelUser) => {

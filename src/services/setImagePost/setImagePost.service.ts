@@ -1,4 +1,5 @@
-import { getDownloadURL, getStorage, ref, uploadBytes } from "firebase/storage";
+import { FirebaseStore } from "@utilities/index";
+import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 
 
 export enum responseImg {
@@ -17,8 +18,8 @@ export const setImagePost = async (file: HTMLInputElement | null, nameDoc: strin
 
   if (file && file.files) {
     const fileInput = file.files[0];
-    const storage = getStorage();
-    const storageRef = ref(storage, nameDoc + fileInput.name);
+
+    const storageRef = ref(FirebaseStore, nameDoc + fileInput.name);
 
     try {
       const snapshot = await uploadBytes(storageRef, fileInput);
@@ -28,9 +29,9 @@ export const setImagePost = async (file: HTMLInputElement | null, nameDoc: strin
 
       return {
         ok: responseImg.SUCCESS,
-        imgUrl: urlImage
+        imgUrl: urlImage,
+        message: 'exito'
       }
-
 
     } catch (error) {
       console.error(error);

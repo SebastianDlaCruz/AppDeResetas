@@ -2,12 +2,13 @@ import { Box, Heading, Image, Text } from "@chakra-ui/react";
 import Publication from "@components/Publications/Publications";
 import { useUserContext } from "@context/index";
 import useGetData from "@hook/useGetData/useGetData";
+import { ModelPublic } from "@pages/home";
 import { getFavorite, getFavoriteLength } from "@pages/home/adapters/getFavorite.adapter";
 import { ButtonStart } from "@pages/home/components/ButtonStart/ButtonStart";
 import ContainerImgProfile from "@pages/home/components/ContainerImgProfile/ContainerImgProfile";
 import ContainerComment from "@pages/home/components/ContinerComment/ContainerComment";
 import FormComment from "@pages/home/components/FormComment/FormComment";
-import { ModelPublic } from "@pages/home/components/Publications/Publications";
+
 const Favorites = () => {
   const { user } = useUserContext();
 

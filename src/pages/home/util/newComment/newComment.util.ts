@@ -6,5 +6,7 @@ export const newComment: ModelComment = {
   idPost: '',
   idUser: '',
   imgUser: '',
-  nameUser: ''
+  nameUser: '',
+  date: '',
+  time: ''
 }

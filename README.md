@@ -27,7 +27,6 @@ Pasos de la Prueba:
     Asegúrate de que la receta se publique correctamente y se muestre en la lista de recetas disponibles.
     Verifica que la receta publicada se muestre con todos los detalles correctos y la imagen correspondiente.
     Explora la lista de recetas y verifica que puedas acceder a la información detallada de cada receta al hacer clic en ellas.
-    Si es posible, implementa pruebas automatizadas para estas funcionalidades utilizando React Testing Library y Jest.
 
 Esta prueba te ayudará a asegurarte de que los usuarios puedan crear y publicar recetas correctamente, y que los otros usuarios puedan explorar y acceder a la información de las recetas de manera efectiva. 
 

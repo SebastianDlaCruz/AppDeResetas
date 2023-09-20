@@ -4,11 +4,12 @@ import useGetImg from "@hook/useGetImg/useGetImg";
 import usePost from "@pages/home/hook/usePost/usePost";
 import { FoodType, SeasonType } from "@pages/home/util/CategoryTypes/CategoryTypes.util";
 import ContainerImage from "../ContainerImage/ContainerImage";
+
 const Post = () => {
+
   const { handleImageUpdate, handleResetImg, imgRef, imgSrc, stateImg, setImgSrc, setStateImg } = useGetImg();
   const { onSubmit, postRef, handleFoodTyp, handleSeasonType, handleTitle, title } = usePost(imgRef, setImgSrc, setStateImg);
-
-
+  
   return (
     <Box as="section" textAlign={"center"}>
       <Box bgColor={"orange.600"} color="whiteAlpha.800" padding={"21px 0"} display={"flex"} flexDirection={"column"}

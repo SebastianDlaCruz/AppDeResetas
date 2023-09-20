@@ -1,5 +1,4 @@
-import { ModelPublic } from "../components/Publications/Publications";
-import { ModelFavorite } from "../models/post.model";
+import { ModelFavorite, ModelPublic } from "../models/post.model";
 export const getFavorite = (favoriteData: ModelFavorite[], idUser: string) => {
   const response = favoriteData.find(favorite => favorite.idUser === idUser);
   if (response) {

@@ -1,5 +1,5 @@
 import { ModelUser } from "@context/index"
-import { ModelPublic } from "@pages/home/components/Publications/Publications"
+import { ModelPublic } from "@pages/home/models/post.model"
 import { setPost } from "@pages/home/services/setPost/setPost.service"
 import { useEffect } from "react"
 const useSetDataPost = (post: ModelPublic[], user: ModelUser) => {

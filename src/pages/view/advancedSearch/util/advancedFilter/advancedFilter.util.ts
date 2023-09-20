@@ -1,4 +1,5 @@
-import { ModelPublic } from "@pages/home/components/Publications/Publications";
+import { ModelPublic } from "@pages/home";
+
 export const advancedFilter = (data: ModelPublic[], search: string, food: string, season: string) => {
   const newData = data.filter(item => {
     if (search.length === 0) {

@@ -33,7 +33,6 @@ const usePost = (imgRef: RefObject<HTMLInputElement>,
     newPost["seasonType"] = seasonType;
     newPost["date"] = getCurrentDate();
     newPost["time"] = getTime();
-
     if (postRef.current !== null) {
       if (imgRef.current !== null &&
         imgRef.current.files?.length !== undefined &&
