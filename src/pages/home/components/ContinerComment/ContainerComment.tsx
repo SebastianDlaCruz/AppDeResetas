@@ -34,6 +34,8 @@ const ContainerComment = ({ idPost }: Props) => {
       </Box>
     )
 
+  } else {
+    return (null)
   }
 
 

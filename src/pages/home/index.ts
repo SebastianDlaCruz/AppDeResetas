@@ -11,6 +11,7 @@ export { default as Publications } from './components/Publications/Publications'
 export { default as usePost } from './hook/usePost/usePost';
 export { default as useSetDataComment } from './hook/useSetDataComment/useSetDataComment';
 export { default as useSetDataPost } from './hook/useSetDataPost/useSetDataPost';
+export * from './index';
 export * from './models/comment.model';
 export * from './models/favorite.model';
 export * from './services/createComment/createComment';
@@ -23,6 +24,5 @@ export * from './util/CategoryTypes/CategoryTypes.util';
 export * from './util/Date/date.util';
 export * from './util/newComment/newComment.util';
 export * from './util/newPost/newPost.util';
-export * from './util/resetStatePost';
 export * from './util/sendPostWithTheImage/sendPostWithTheImage.util';
 

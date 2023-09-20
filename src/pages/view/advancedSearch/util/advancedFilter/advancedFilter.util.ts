@@ -1,4 +1,4 @@
-import { ModelPublic } from "@pages/home";
+import { ModelPublic } from "@pages/home/components/Publications/Publications";
 
 export const advancedFilter = (data: ModelPublic[], search: string, food: string, season: string) => {
   const newData = data.filter(item => {

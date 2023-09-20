@@ -10,6 +10,8 @@ interface Props {
 
 const ContainerImage = ({ status, src, onClick }: Props) => {
 
+  if (status === statusImage.NULL) return null;
+
   if (status === statusImage.PENDING) return (<Spinner size='xl' color="orange.400" />)
 
   if (status === statusImage.SUCCESS) {
@@ -21,6 +23,8 @@ const ContainerImage = ({ status, src, onClick }: Props) => {
       </Box>
     )
   }
+
+  return null
 }
 
 export default ContainerImage
