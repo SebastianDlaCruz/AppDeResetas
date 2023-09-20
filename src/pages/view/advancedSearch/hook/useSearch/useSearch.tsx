@@ -1,5 +1,5 @@
 import useGetData from "@hook/useGetData/useGetData";
-import { ModelPublic } from "@pages/home";
+import { ModelPublic } from "@pages/home/components/Publications/Publications";
 import { ChangeEvent, FormEvent, useMemo, useState } from "react";
 import { advancedFilter } from "../../util/advancedFilter/advancedFilter.util";
 const useSearch = () => {
